@@ -26,8 +26,11 @@ The system enables two or more users to edit the article in real time.
 #### BUILDING
 
 Install latest node, npm
+
 Run: npm install
+
 Configure the db settings in sconfig.js
+
 Run: gulp
 
 
