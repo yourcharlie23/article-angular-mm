@@ -3,7 +3,7 @@ System.config({
   transpiler: "-a",
   paths: {
     "app/*": "src/*.js",
-    "users/*": "src/users/*.js",
+    "articles/*": "src/articles/*.js",
     "material-start/*": "src/*.js",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
@@ -18,8 +18,10 @@ System.config({
     "angular-material": "github:angular/bower-material@master",
     "angular-messages": "github:angular/bower-angular-messages@1.5.8",
     "angular-mocks": "github:angular/bower-angular-mocks@1.5.8",
+    "angular-ui-router": "npm:angular-ui-router@0.3.2",
     "css": "github:systemjs/plugin-css@0.1.29",
     "json": "github:systemjs/plugin-json@0.1.2",
+    "medium-editor": "npm:medium-editor@5.22.1",
     "text": "github:systemjs/plugin-text@0.0.4",
     "traceur": "github:jmcriffey/bower-traceur@0.0.92",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.92",
@@ -54,6 +56,10 @@ System.config({
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
     },
+    "npm:angular-ui-router@0.3.2": {
+      "angular": "npm:angular@1.5.8",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:assert@1.4.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -73,6 +79,9 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:medium-editor@5.22.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:process@0.11.9": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",

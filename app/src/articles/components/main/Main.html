@@ -1,0 +1,62 @@
+<auth ng-if="!app.auth" app="app">
+</auth>
+<div ng-if="app.auth">
+  <md-toolbar layout="row" class="md-toolbar-tools">
+    <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()"
+               aria-label="Show Article List">
+      <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
+    <span flex></span>
+    <div layout="row" layout-align="center center">
+      <h1>Artcile App</hi>
+    </div>
+    <span flex></span>
+
+    <md-button>
+      <md-icon md-svg-icon="svg-1" class="avatar" ng-click="app.toggleUserMenu()"></md-icon>
+    </md-button>
+  </md-toolbar>
+
+  <!-- Container #2 -->
+  <div flex layout="row">
+
+    <!-- Container #3 -->
+    <md-sidenav class="md-sidenav-left md-whiteframe-4dp _md" md-is-locked-open="$mdMedia('gt-sm')"
+                md-component-id="left" ng-click="app.toggleList()">
+      <!-- Custom ArticlesList component -->
+      <md-toolbar hide-gt-sm class="md-theme-light _md-toolbar-transitions">
+        <h1 class="md-toolbar-tools">Articles</h1>
+      </md-toolbar>
+      <md-content layout-padding="" class="layout-padding">
+        <articles-list  
+            articles="app.articles" selected="app.selected" on-selected="app.selectArticle(article)">
+        </articles-list>
+      </md-content>
+    </md-sidenav>
+
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp _md" md-component-id="right">
+
+      <md-toolbar class="md-theme-light _md-toolbar-transitions">
+        <h1 class="md-toolbar-tools">{{app.auth.name || app.auth.email}}</h1>
+      </md-toolbar>
+      <md-content layout-padding="" class="layout-padding">
+        <md-menu-item>
+          <a md-button class="md-ink-ripple" ng-click="app.openResetPassword()">Change Password</a>
+        </md-menu-item>
+        <md-menu-item>
+          <a md-button class="md-ink-ripple" ng-click="app.logout()">Logout</a>
+        </md-menu-item>
+      </md-content>
+
+    </md-sidenav>
+
+    <!-- Container #4 -->
+    <md-content flex id="content">
+      <!-- Custom ArticleDetails component -->
+      <article-details
+          selected="app.selected" app="app">
+      </article-details>
+    </md-content>
+
+  </div>
+</div>

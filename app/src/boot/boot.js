@@ -12,7 +12,7 @@ angular
     angular
       .module( 'starter-app-bootstrap', [ App.name ] )
       .run(()=>{
-        console.log(`Running the 'starter-app-bootstrap' ES6 Material-Start Tutorial`);
+        console.log(`Running the 'starter-app-bootstrap' ES5 Material-Start Tutorial`);
       });
 
     let body = document.getElementsByTagName("body")[0];

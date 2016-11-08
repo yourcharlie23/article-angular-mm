@@ -1,0 +1,112 @@
+<div layout="row" layout-align="center center">
+    <form name="form" novalidate>
+    	<div ng-if="$ctrl.auth_view=='login'">
+    		<h1 layout="row" layout-align="center center">Login</h1>
+	      <div class="row group">
+	        <div class="col s12">
+	          <input id="email" ng-model="$ctrl.login_data.email" type="email" required>
+	          <span class="highlight"></span>
+	      		<span class="bar"></span>
+	      		<label>Email</label>
+	        </div>
+	      </div>
+	      <div class="row group">
+	        <div class="col s12">
+	          <input id="password" ng-model="$ctrl.login_data.password" type="password" required>
+	          <span class="highlight"></span>
+	      		<span class="bar"></span>
+	          <label>Password</label>
+	        </div>
+	      </div>
+	      <div ng-if="$ctrl.login_error" layout="row" layout-align="center center">
+	      	<div class="error">Wrong email or password.</div>
+	      </div>
+	      <div layout="row" layout-align="center center">
+	      	<md-progress-circular md-mode="indeterminate" md-diameter="20" ng-show="$ctrl.isLoginLoading"></md-progress-circular>
+	      	<md-button class="md-raised md-primary" ng-click="$ctrl.login()" ng-show="!$ctrl.isLoginLoading">Submit</md-button>
+	      </div>
+	      <div layout="row" layout-align="end center">
+	      	<md-button class="md-flat md-primary" ng-click="$ctrl.auth_view='forgot'">Forgot Password?</md-button>
+	      </div>
+	      <div class="row group">
+	        <div class="col s12">
+		      	<span>No account yet?</span>
+		      	<md-button class="md-flat md-primary" ng-click="$ctrl.auth_view='signup'">Sign up</md-button>
+		      </div>
+	      </div>
+	    </div>
+
+	    <div ng-if="$ctrl.auth_view=='forgot'">
+    		<h1 layout="row" layout-align="center center">Forgot Password</h1>
+	      <div class="row group">
+	        <div class="col s12">
+	          <input id="email" ng-model="$ctrl.forgot_data.email" type="email" required>
+	          <span class="highlight"></span>
+	      		<span class="bar"></span>
+	      		<label>Email</label>
+	        </div>
+	      </div>
+	      <div ng-if="$ctrl.forgot_error" layout="row" layout-align="center center">
+	      	<div class="error">Invalid Email.</div>
+	      </div>
+	      <div layout="row" layout-align="center center" ng-show="$ctrl.isForgotLoading">
+	      	<md-progress-circular md-mode="indeterminate" md-diameter="20"></md-progress-circular>
+	      </div>
+	      <div layout="row" layout-align="center center" ng-show="!$ctrl.isForgotLoading">
+	      	<md-button class="md-flat" ng-click="$ctrl.auth_view='login'">Cancel</md-button>
+	      	<md-button class="md-raised md-primary" ng-click="$ctrl.forgotPassword()">Submit</md-button>
+	      </div>
+	    </div>
+
+	    <div ng-if="$ctrl.auth_view=='signup'">
+	    	<h1 layout="row" layout-align="center center">Sign Up</h1>
+	      <div class="row group">
+	        <div class="col s12">
+	          <input id="email" ng-model="$ctrl.signup_data.email" type="email" required>
+	          <span class="highlight"></span>
+	      		<span class="bar"></span>
+	      		<label>Email</label>
+	        </div>
+	      </div>
+	      <div class="row group">
+	        <div class="col s12">
+	          <input id="password" ng-model="$ctrl.signup_data.password" type="password" required>
+	          <span class="highlight"></span>
+	      		<span class="bar"></span>
+	          <label>Password</label>
+	        </div>
+	      </div>
+	     	<div class="row group">
+	        <div class="col s12">
+	          <input id="re_password" ng-model="$ctrl.signup_data.re_password" type="password" required>
+	          <span class="highlight"></span>
+	      		<span class="bar"></span>
+	          <label>Re-Password</label>
+	        </div>
+	      </div>
+	      <div class="row group">
+	        <div class="col s12">
+	          <input id="name" ng-model="$ctrl.signup_data.name" type="text" required>
+	          <span class="highlight"></span>
+	      		<span class="bar"></span>
+	          <label>Full Name</label>
+	        </div>
+	      </div>
+	      <div ng-if="$ctrl.signup_error" layout="row" layout-align="center center">
+	      	<div class="error">Invalid input.</div>
+	      </div>
+	      <div layout="row" layout-align="center center">
+	      	<md-progress-circular md-mode="indeterminate" md-diameter="20" ng-show="$ctrl.isSignupLoading"></md-progress-circular>
+	      	<md-button class="md-raised md-primary" ng-click="$ctrl.signup()" ng-show="!$ctrl.isSignupLoading">Submit</md-button>
+	      </div>
+	      <div class="row group">
+	        <div class="col s12">
+		      	<span>Already have an account?</span>
+		      	<md-button class="md-flat md-primary" ng-click="$ctrl.auth_view='login'">Login</md-button>
+		      </div>
+	      </div>
+	    </div>
+
+    </form>
+  </div>
+

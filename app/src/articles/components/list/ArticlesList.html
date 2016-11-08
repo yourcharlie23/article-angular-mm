@@ -1,0 +1,9 @@
+<!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
+<md-list>
+  <md-list-item ng-repeat="article in $ctrl.articles">
+    <md-button ng-click="$ctrl.showDetails({article:article})" ng-class="{'selected' : article === $ctrl.selected }">
+      <i class="zmdi zmdi-bookmark-outline"></i>
+      <span ui-short-text>{{getShortText()}}</span>
+    </md-button>
+  </md-list-item>
+</md-list>
